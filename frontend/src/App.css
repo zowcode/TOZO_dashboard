@@ -2,12 +2,58 @@
   text-align: center;
 }
 
+.row{
+  margin: 0;
+  padding: 0;
+
+}
+
+.widgetContainer{
+  margin: 0;
+  padding: 0;
+  background-color:red;
+
+}
+
+.pageName
+{
+  text-align: center;
+  margin:0;
+  padding: 0;
+
+}
+
+.col{
+  margin:0;
+  padding: 0;
+}
+
+
+.dashboardContainer{
+  margin: 0;
+  padding: 0;
+}
+
+.profilBar {
+  background-color: rgb(2, 189, 245);
+  margin:0;
+  padding: 0;
+
+}
+
+
+.container{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+}
+
 .App-logo {
   height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
