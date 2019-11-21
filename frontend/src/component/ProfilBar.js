@@ -5,6 +5,7 @@ function ProfilBar() {
   return (
     <div className="ProfilBar">
       Profil Bar
+      Thomas c le plus bo
     </div>
   );
 }
