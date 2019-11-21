@@ -9,15 +9,21 @@
 }
 
 .widgetContainer{
-  margin: 0;
+  margin: 2rem;
   padding: 0;
-  background-color:red;
+
+}
+.widget{
+  margin: 1rem;
+  padding: 0;
+  height: 15rem;
+  background-color:rgba(0, 0, 255, 0.262);
 
 }
 
 .pageName
 {
-  text-align: center;
+  text-align:center;
   margin:0;
   padding: 0;
 
@@ -38,6 +44,7 @@
   background-color: rgb(2, 189, 245);
   margin:0;
   padding: 0;
+  height: 47rem;
 
 }
 

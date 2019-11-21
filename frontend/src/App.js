@@ -7,7 +7,6 @@ import ProfilBar from './component/ProfilBar.js';
 
 function App() {
   return (
-    <div className="fluid container  " >
       <div className="row principal " >
 
         <div className = " profilBar col col-2 col-lg-2 col-md-2 col-sm-2">
@@ -17,9 +16,7 @@ function App() {
            <Dashboard ></Dashboard>
        </div>
 
-       </div>
-    </div>
-      
+      </div>
   );
 }
 

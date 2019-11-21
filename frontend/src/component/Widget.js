@@ -3,8 +3,9 @@ import '../App.css';
 
 function Widget() {
   return (
-    <div className="widgetContainer">
-    Widget
+    <div className="widget">
+        <div className="widgetName"> Name</div>
+        <div className="widgetType"> Type </div>
     </div>
   );
 }

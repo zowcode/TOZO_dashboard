@@ -5,11 +5,11 @@ import Widget from './Widget.js';
 function Dashboard() {
   return (
     <div>
-         <div className="row pageName">
+        <div className="row pageName">
             <h1> DASHBOARD </h1>
-         </div>
+        </div>
 
-        <div className="row">
+        <div className="row widgetContainer">
 
             <div className="col">
                 <Widget></Widget>
@@ -22,7 +22,7 @@ function Dashboard() {
             </div>
 
             </div>
-            <div className="row ">
+        <div className="row widgetContainer">
             <div className="col">
                 <Widget></Widget>
             </div>
@@ -32,7 +32,7 @@ function Dashboard() {
             <div className="col">
                 <Widget></Widget>
             </div>
-         </div>
+        </div>
 
     </div>
   );
