@@ -4,6 +4,7 @@ import './App.css';
 import Dashboard from './component/Dashboard.js';
 import APIpage from './component/APIpage.js';
 import ProfilBar from './component/ProfilBar.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div>
         <div className="row pageName">
-            <h1> DASHBOARD </h1>
+            <h1 className="dashboard"> DASHBOARD </h1>
         </div>
 
         <div className="row widgetContainer">
