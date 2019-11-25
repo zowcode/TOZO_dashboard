@@ -55,6 +55,7 @@
   margin:0;
   padding: 0;
   height: 47rem;
+ 
 
 }
 
@@ -84,13 +85,13 @@
   color: #09d3ac;
 }
 
-.photoProfilUtilisateur
+.photoProfilUser
 {
  
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
+  margin-bottom: 5rem;
 }
 
 
@@ -103,15 +104,21 @@
   font-family: Archive;
 }
 
-.bouttonProfilUtilisateur
+.bouttonDashboard
 { 
   margin-top: 35%;
   border: none;
-  width: 5em;
-  height: 2.3em;
-  border-radius: 15%;
-  background-color: #d88aa7;
+  width: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
+}
+
+.containerBouttonDashboard
+{
+  background-color: black;
+
 }
 
 .dashboard 

@@ -10,10 +10,10 @@ function App() {
   return (
       <div className="row principal " >
 
-        <div className = " profilBar col col-2 col-lg-2 col-md-2 col-sm-2">
+        <div className = " profilBar col col-1 col-lg-1 col-md-1 col-sm-1">
           <ProfilBar></ProfilBar>
         </div>
-        <div className = "col col-10 col-lg-10 col-md-10 col-sm-10">
+        <div className = "col col-11 col-lg-11 col-md-11 col-sm-11">
            <Dashboard ></Dashboard>
        </div>
 

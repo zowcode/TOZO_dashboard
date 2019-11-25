@@ -13,13 +13,13 @@ function ProfilBar() {
       <div className="container">
 
     
-        <Image className="photoProfilUser" src={photoProfil} roundedCircle height="70%" width="70%"/> 
+        <Image className="photoProfilUser" src={photoProfil} roundedCircle height="125%" width="125%"/> 
 
       
  
-         <button className=" "   >Profil</button> <br/>
-         <img src={ require('../Images/plus.svg')} className="bouttonProfilUtilisateur"></img>
-
+         <div className="containerBouttonDashboard">
+           <img src={ require('../Images/dashboard.svg')} className="bouttonDashboard offset-3"></img>
+         </div>
     
         <Button className="bouttonModifierWidget " variant="secondary">Widgets</Button><br/>
       
