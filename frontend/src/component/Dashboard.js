@@ -2,6 +2,8 @@ import React from 'react';
 import { Component } from "react";
 import '../App.css';
 import Widget from './Widget.js';
+import Widget1 from './Widget1';
+import Widget2 from './Widget2';
 
 class Dashboard extends Component {
 
@@ -68,16 +70,14 @@ class Dashboard extends Component {
                 <div className="row widgetContainer">
 
                     <div className="col">
-                        <Widget nom={this.state.widget1.nom}
+                        <Widget1 nom={this.state.widget1.nom}
                         type={this.state.widget1.type}
                         content={this.state.widget1.content} >  
-                        </Widget>
+                        </Widget1>
                     </div>
                     <div className="col">
-                        <Widget nom={this.state.widget2.nom}
-                        type={this.state.widget2.type}
-                        content={this.state.widget2.content} >  
-                        </Widget>
+                        <Widget2 nom={this.state.widget2.nom} >  
+                        </Widget2>
                     </div>
                     <div className="col">
                         <Widget nom={this.state.widget3.nom}

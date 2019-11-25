@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.icon-star:before {
+  content: "\e608";
+}
+.icon-star-hollow:before {
+  content: "\e609";
+}
+
 .row{
   margin: 0;
   padding: 0;
