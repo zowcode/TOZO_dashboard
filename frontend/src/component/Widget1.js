@@ -29,9 +29,9 @@ class Widget1 extends Component {
     render() {
         this.type=this.props.type;
         return (
-            <div className="Widget1">
+            <div className="widget">
                  <div className="widgetName"> {this.props.nom} </div>
-                
+               
             
             </div>
         );

@@ -1,34 +1,58 @@
-import React from 'react';
 import { Component } from "react";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import React, { PureComponent } from 'react';
+import {
+  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+} from 'recharts';
 
+const data = [
+  {
+    name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+  },
+  {
+    name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+  },
+  {
+    name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+  },
+  {
+    name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+  },
+  {
+    name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+  },
+  {
+    name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+  },
+  {
+    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+  },
+];
 
-class Widget2 extends Component {
-    // CONSTRUCTEUR
-   constructor(props) {
+export default class Example extends PureComponent {
+  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/9hjfkp73/';
 
-   super(props);}
-    // STATE: données internes du composant
-   
-   render() {
-       this.type=this.props.type;
-       var data = [9, 56, 46];
-       
-       return (
-           <div className="Widget2">
-               <div className="widgetName"> {this.props.nom} </div>
-                
-               <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+  render() {
+    return (
+        <div className="widget">   
+            <div className="widgetName"> {this.props.nom} </div>
+            <BarChart
+                width={400}
+                height={200}
+                data={data}
+                margin={{
+                top: 20, right: 30, left: 20, bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
-                </LineChart>
-                            
-           
-           </div>
-       );
-   }
- 
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" stackId="a" fill="#8884d8" />
+                <Bar dataKey="amt" stackId="a" fill="#82ca9d" />
+                <Bar dataKey="uv" fill="#ffc658" />
+            </BarChart>
+        </div>
+    );
+  }
 }
-export default Widget2;

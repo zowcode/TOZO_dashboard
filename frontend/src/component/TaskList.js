@@ -5,6 +5,13 @@ import React from 'react';
 
 import Task from './Task';
 
+const tasks = [
+  { id: 'Group A', value: 400 },
+  { id: 'Group B', value: 300 },
+  { id: 'Group C', value: 300 },
+  { id: 'Group D', value: 200 },
+];
+
 function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
   const events = {
     onPinTask,
@@ -33,27 +40,10 @@ function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
     );
   }
 
-  if (tasks.length === 0) {
-    return (
-      <div className="list-items">
-        <div className="wrapper-message">
-          <span className="icon-check" />
-          <div className="title-message">You have no tasks</div>
-          <div className="subtitle-message">Sit back and relax</div>
-        </div>
-      </div>
-    );
-  }
-
-  const tasksInOrder = [
-    ...tasks.filter(t => t.state === 'TASK_PINNED'),
-    ...tasks.filter(t => t.state !== 'TASK_PINNED'),
-  ];
-
   return (
     <div className="list-items">
         <div> {tasks} </div>
-      {tasksInOrder.map(task => (
+      {tasks.map(task => (
         <Task key={task.id} task={task} {...events} />
       ))}
     </div>

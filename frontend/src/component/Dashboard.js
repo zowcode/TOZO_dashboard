@@ -4,6 +4,10 @@ import '../App.css';
 import Widget from './Widget.js';
 import Widget1 from './Widget1';
 import Widget2 from './Widget2';
+import Widget3 from './Widget3';
+import Widget4 from './Widget4';
+import Widget5 from './Widget5';
+import Widget6 from './Widget6';
 
 class Dashboard extends Component {
 
@@ -16,28 +20,28 @@ class Dashboard extends Component {
       
             widget1 : 
             {
-               nom: "widget1",
+               nom: "Todolist",
                type: "1",
                content: "blablablaabalabl"
             },
         
             widget2 : 
             {
-                nom: "widget2",
+                nom: "BarChart",
                 type: "2",
                 content: "blablablaabalabl"
             },
 
             widget3 : 
             {
-                nom: "widget3",
+                nom: "PieChart",
                 type: "3",
                 content: "blablablaabalabl"
             },
 
             widget4: 
             {
-                nom: "widget4",
+                nom: "LineChart",
                 type: "4",
                 content: "blablablaabalabl"
             },
@@ -72,7 +76,7 @@ class Dashboard extends Component {
                     <div className="col">
                         <Widget1 nom={this.state.widget1.nom}
                         type={this.state.widget1.type}
-                        content={this.state.widget1.content} >  
+                        content={this.state.widget1.content} > 
                         </Widget1>
                     </div>
                     <div className="col">
@@ -80,19 +84,19 @@ class Dashboard extends Component {
                         </Widget2>
                     </div>
                     <div className="col">
-                        <Widget nom={this.state.widget3.nom}
+                        <Widget3 nom={this.state.widget3.nom}
                         type={this.state.widget3.type}
                         content={this.state.widget3.content} >  
-                        </Widget>
+                        </Widget3>
                     </div>
 
-                    </div>
+                </div>
                 <div className="row widgetContainer">
                     <div className="col">
-                        <Widget nom={this.state.widget4.nom}
+                        <Widget4 nom={this.state.widget4.nom}
                         type={this.state.widget4.type}
                         content={this.state.widget4.content} >  
-                        </Widget>
+                        </Widget4>
                     </div>
                     <div className="col">
                         <Widget nom={this.state.widget5.nom}
