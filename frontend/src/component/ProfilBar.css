@@ -1,0 +1,38 @@
+.photoProfilUser
+{
+   margin-bottom: 5rem;
+   margin-left: 1.5rem;
+   margin-right: auto;
+   margin-top: 1rem;
+}
+
+
+
+
+.bouttonDashboard
+{ 
+    background-color: #05f26c !important;
+    border-color: #05f26c !important;
+    margin-top: 2rem;
+    border-radius: 0px !important;
+    
+}
+
+.bouttonPlus
+{
+    background-color: #05f26c !important;
+    border-color: #05f26c !important ;
+    border-radius: 0px !important;
+}
+.profilBar {
+    background-color: rgb(49, 49, 49);
+  
+    height: 47rem;
+   
+  
+  }
+
+  .row2
+  {
+      margin-bottom: 1rem;
+  }

@@ -5,7 +5,7 @@
 
 .principal
 {
-  background-color: #fff0f5;
+  background-color: white;
 
   
 }
@@ -22,9 +22,10 @@
   height: 15rem;
   background-color: white;
   border-radius : 2%;
-  border : #2ba5a5 solid 0.1em;
+  border : #05f26c solid 0.1em;
   font-family: Archive;
   text-align: center;
+  box-shadow: lightgray 0.1rem 0.1rem 30px ;
 }
 
 .pageName
@@ -46,13 +47,7 @@
   padding: 0;
 }
 
-.profilBar {
-  background-color: #2ba5a5;
 
-  height: 47rem;
- 
-
-}
 
 
 .container{
@@ -79,32 +74,8 @@
   color: #09d3ac;
 }
 
-.photoProfilUser
-{
- 
-
-  margin-bottom: 5rem;
-}
 
 
-
-
-.bouttonDashboard
-{ 
-  
-  border: none;
-  width: 3rem;
-
-  color: white;
-}
-
-.containerBouttonDashboard
-{
-  background-color: rgb(238, 88, 218);
-  width: 15rem;
-  
-
-}
 
 .dashboard 
 {
@@ -113,7 +84,7 @@
   margin-right: auto;
   text-align: center;
 font-family: Archive;
-color: #2ba5a5;
+color: #04d976;
 }
 
 @font-face
