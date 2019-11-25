@@ -9,11 +9,7 @@
 
   
 }
-.row{
-  margin: 0;
-  padding: 0;
 
-}
 
 .widgetContainer{
   margin: 2rem;
@@ -52,8 +48,7 @@
 
 .profilBar {
   background-color: #2ba5a5;
-  margin:0;
-  padding: 0;
+
   height: 47rem;
  
 
@@ -62,8 +57,7 @@
 
 .container{
   text-align: center;
-  margin: 0;
-  padding: 0;
+
 
 }
 
@@ -88,36 +82,27 @@
 .photoProfilUser
 {
  
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
   margin-bottom: 5rem;
 }
 
 
-.bouttonProfilUtilisateur, .bouttonModifierWidget
-{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-  font-family: Archive;
-}
+
 
 .bouttonDashboard
 { 
-  margin-top: 35%;
+  
   border: none;
   width: 3rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
   color: white;
 }
 
 .containerBouttonDashboard
 {
-  background-color: black;
+  background-color: rgb(238, 88, 218);
+  width: 15rem;
+  
 
 }
 

@@ -16,11 +16,11 @@ function ProfilBar() {
         <Image className="photoProfilUser" src={photoProfil} roundedCircle height="125%" width="125%"/> 
 
       
- 
+      <div className="row">
          <div className="containerBouttonDashboard">
-           <img src={ require('../Images/dashboard.svg')} className="bouttonDashboard offset-3"></img>
+           <img src={ require('../Images/dashboard.svg')} className="bouttonDashboard"></img>
          </div>
-    
+     </div>
         <Button className="bouttonModifierWidget " variant="secondary">Widgets</Button><br/>
       
 
