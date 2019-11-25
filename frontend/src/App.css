@@ -1,7 +1,14 @@
 .App {
   text-align: center;
+ 
 }
 
+.principal
+{
+  background-color: #fff0f5;
+
+  
+}
 .row{
   margin: 0;
   padding: 0;
@@ -17,9 +24,11 @@
   margin: 1rem;
   padding: 0;
   height: 15rem;
-  background-color:rgba(0, 0, 255, 0.262);
+  background-color: white;
   border-radius : 2%;
-
+  border : #2ba5a5 solid 0.1em;
+  font-family: Archive;
+  text-align: center;
 }
 
 .pageName
@@ -77,9 +86,11 @@
 
 .photoProfilUtilisateur
 {
+ 
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
+  
 }
 
 
@@ -89,12 +100,18 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
+  font-family: Archive;
 }
 
 .bouttonProfilUtilisateur
-{
+{ 
   margin-top: 35%;
-  
+  border: none;
+  width: 5em;
+  height: 2.3em;
+  border-radius: 15%;
+  background-color: #d88aa7;
+  color: white;
 }
 
 .dashboard 

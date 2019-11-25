@@ -16,7 +16,8 @@ function ProfilBar() {
 
       
  
-         <Button className="bouttonProfilUtilisateur " variant="danger"  >Profil</Button> <br/>
+         <button className=" "   >Profil</button> <br/>
+         <img src="profil.svg" className="bouttonProfilUtilisateur"></img>
 
     
         <Button className="bouttonModifierWidget " variant="secondary">Widgets</Button><br/>
