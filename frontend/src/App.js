@@ -1,13 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Component } from "react";
 import './App.css';
 import Dashboard from './component/Dashboard.js';
 import APIpage from './component/APIpage.js';
 import ProfilBar from './component/ProfilBar.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      profil: 1
+      
+    };
+  }
+
+  render() {
+    return (
       <div className="row principal " >
 
         <div className = " profilBar col col-1 col-lg-1 col-md-1 col-sm-1">
@@ -18,7 +29,8 @@ function App() {
        </div>
 
       </div>
-  );
+    );
+  }
 }
 
 export default App;
