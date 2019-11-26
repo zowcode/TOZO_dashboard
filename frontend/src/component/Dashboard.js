@@ -10,7 +10,6 @@ import Widget5 from './Widget5';
 import Widget6 from './Widget6';
 
 class Dashboard extends Component {
-
     // CONSTRUCTEUR
     constructor(props) {
 

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .icon-star:before {
@@ -12,8 +13,15 @@
 .row{
   margin: 0;
   padding: 0;
-
 }
+
+.principal
+{
+  background-color: white;
+
+  
+}
+
 
 .widgetContainer{
   margin: 2rem;
@@ -24,8 +32,12 @@
   margin: 1rem;
   padding: 0;
   height: 15rem;
-  background-color:rgba(0, 0, 255, 0.262);
-
+  background-color: white;
+  border-radius : 2%;
+  border : #05f26c solid 0.1em;
+  font-family: Archive;
+  text-align: center;
+  box-shadow: lightgray 0.1rem 0.1rem 30px ;
 }
 .widgetName{
   text-align: center;
@@ -51,19 +63,12 @@
   padding: 0;
 }
 
-.profilBar {
-  background-color: rgb(2, 189, 245);
-  margin:0;
-  padding: 0;
-  height: 47rem;
 
-}
 
 
 .container{
   text-align: center;
-  margin: 0;
-  padding: 0;
+
 
 }
 
@@ -83,4 +88,23 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+
+
+
+.dashboard 
+{
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+font-family: Archive;
+color: #04d976;
+}
+
+@font-face
+{
+  font-family: Archive;
+  src: url(Font/ARCHIVE-REGULAR.TTF);
 }
