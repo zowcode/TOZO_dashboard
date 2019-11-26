@@ -1,0 +1,25 @@
+.todoListMain button
+{
+    background-color: white;
+    color: #05f26c;
+    border: 0.5px #05f26c solid;
+    border-radius: 5rem;
+    margin-left: 1rem;
+}   
+
+.todoListMain .header input 
+{
+    border:  0.1px solid rgb(49,49,49);
+    border-radius: 3rem;
+}
+
+.todoListMain .header input::placeholder
+{
+    color: #05f26c;
+
+}
+
+.header
+{
+    margin-top: 0.5rem;
+}

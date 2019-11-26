@@ -1,41 +1,60 @@
-import React from 'react';
-import { Component } from "react";
-import '../App.css';
-import TaskList from './TaskList';
-
-/// DONNÉES EN DUR DE TASK
-
-const defaultTasks = {
-    task1: {
-      id: "1",
-      nom: "tache 1",
-      type: "1"
-    },
-
-    task2: {
-        id: "2",
-        nom: "",
-        type: "B."
-      },
-  }
+import React, { Component } from "react";
+import Widget1Items from "./Widget1Items.js";
+import './Widget1.css';
 
 class Widget1 extends Component {
-     // CONSTRUCTEUR
-    constructor(props) {
+  constructor(props) {
+    super(props);
 
-    super(props);}
-     // STATE: données internes du composant
+    this.state = {
+      items: []
+    };
+
+    this.addItem = this.addItem.bind(this);
+  }
+   
+  addItem(e) {
+
+    if (this._inputElement.value !== "") {
+      var newItem = {
+        text: this._inputElement.value,
+        key: Date.now()
+      };
+   
+      this.setState((prevState) => {
+        return { 
+          items: prevState.items.concat(newItem) 
+        };
+      });
      
-    render() {
-        this.type=this.props.type;
-        return (
-            <div className="widget">
-                 <div className="widgetName"> {this.props.nom} </div>
-               
-            
-            </div>
-        );
+      this._inputElement.value = "";
     }
-  
+     
+    console.log(this.state.items);
+       
+    e.preventDefault();
+ 
+  }
+   
+  render() {
+    return (
+      
+      <div className="widget todoListMain">
+        TO DO LIST
+        <div className="header">
+          <form onSubmit={this.addItem}>
+            
+            <input
+            ref={(a) => this._inputElement = a} 
+             placeholder="A faire">
+            </input>
+            <button type="submit">add</button>
+          </form>
+        </div>
+        <Widget1Items entries={this.state.items}/>
+      </div>
+    );
+  }
 }
+ 
 export default Widget1;
