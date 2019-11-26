@@ -7,10 +7,17 @@
     margin-left: 1rem;
 }   
 
+.todoListMain button:hover
+{
+    background-color: #05f26c;
+    color: white;
+}
+
 .todoListMain .header input 
 {
     border:  0.1px solid rgb(49,49,49);
     border-radius: 3rem;
+    margin-bottom: 1rem;
 }
 
 .todoListMain .header input::placeholder
@@ -23,3 +30,22 @@
 {
     margin-top: 0.5rem;
 }
+
+.theList 
+{
+    list-style: none;
+    padding-left: 0px;
+    width: auto;
+
+}
+
+.theList li
+{
+    color: #05f26c;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5rem;
+    border: #05f26c solid 0.1px;
+    width: auto;
+    padding : 0.5rem;
+}
+
