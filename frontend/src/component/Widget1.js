@@ -11,6 +11,7 @@ class Widget1 extends Component {
     };
 
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
    
   addItem(e) {
@@ -35,6 +36,16 @@ class Widget1 extends Component {
     e.preventDefault();
  
   }
+
+  deleteItem(key) {
+    var filteredItems = this.state.items.filter(function (item) {
+      return (item.key !== key);
+    });
+   
+    this.setState({
+      items: filteredItems
+    });
+  }
    
   render() {
     return (
@@ -51,7 +62,8 @@ class Widget1 extends Component {
             <button type="submit">add</button>
           </form>
         </div>
-        <Widget1Items entries={this.state.items}/>
+        <Widget1Items entries={this.state.items}
+                      delete={this.deleteItem}/>
       </div>
     );
   }
