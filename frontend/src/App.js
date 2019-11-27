@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from "react";
 import './App.css';
+import './PageAPI.css';
 import Dashboard from './component/Dashboard.js';
 import Page2 from './component/Page2';
 import pageAPI from './component/pageAPI.js';
@@ -35,12 +36,10 @@ class App extends Component {
                 <Route path="/dashboard" component={Dashboard}/>
                 <Route path="/pageAPI" component={pageAPI}/>
               </Route>
-         
         </div>
       </div>
     );
   }
 
 }
-
 export default App;
