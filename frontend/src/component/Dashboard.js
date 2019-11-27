@@ -10,6 +10,12 @@ import Widget5 from './Widget5';
 import Widget6 from './Widget6';
 
 class Dashboard extends Component {
+
+
+    
+
+
+
     // CONSTRUCTEUR
     constructor(props) {
 
@@ -26,34 +32,34 @@ class Dashboard extends Component {
         
             widget2 : 
             {
-                nom: "BarChart",
+                nom: "Température",
                 type: "2",
                 content: "blablablaabalabl"
             },
 
             widget3 : 
             {
-                nom: "PieChart",
+                nom: "Humidité",
                 type: "3",
                 content: "blablablaabalabl"
             },
 
             widget4: 
             {
-                nom: "LineChart",
+                nom: "Pollution de l'air",
                 type: "4",
                 content: "blablablaabalabl"
             },
 
             widget5 : 
             {
-                nom: "widget5",
+                nom: "Météo",
                 type: "5",
                 content: "blablablaabalabl"
             },
             widget6 : 
             {
-                nom: "widget6",
+                nom: "?",
                 type: "6",
                 content: "blablablaabalabl"
             }
@@ -65,9 +71,9 @@ class Dashboard extends Component {
     // CALL API
     render() {
         return (
-            <div>
-                <div className="row pageName">
-                    <h1> DASHBOARD </h1>
+            <div className="dashboard">
+                <div className="row ">
+                     <h1 className="pageName">DASHBOARD</h1> 
                 </div>
 
                 <div className="row widgetContainer">
@@ -83,7 +89,7 @@ class Dashboard extends Component {
                         </Widget2>
                     </div>
                     <div className="col">
-                        <Widget3 nom={this.state.widget3.nom}
+                        <Widget3  nom={this.state.widget3.nom}
                         type={this.state.widget3.type}
                         content={this.state.widget3.content} >  
                         </Widget3>
@@ -98,10 +104,10 @@ class Dashboard extends Component {
                         </Widget4>
                     </div>
                     <div className="col">
-                        <Widget nom={this.state.widget5.nom}
+                        <Widget5 nom={this.state.widget5.nom}
                         type={this.state.widget5.type}
                         content={this.state.widget5.content} >  
-                        </Widget>
+                        </Widget5>
                     </div>
                     <div className="col">
                         <Widget nom={this.state.widget6.nom}
