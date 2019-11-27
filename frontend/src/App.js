@@ -2,9 +2,15 @@ import React from 'react';
 import { Component } from "react";
 import './App.css';
 import Dashboard from './component/Dashboard.js';
-import APIpage from './component/APIpage.js';
+import Page2 from './component/Page2';
+import pageAPI from './component/pageAPI.js';
 import ProfilBar from './component/ProfilBar.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Route, Switch} from 'react-router-dom';
+import { BrowserRouter , Link} from 'react-router-dom';
+
+
+
 
 
 class App extends Component {
@@ -20,17 +26,21 @@ class App extends Component {
   render() {
     return (
       <div className="row principal " >
-
         <div className = " profilBar col col-1 col-lg-1 col-md-1 col-sm-1">
           <ProfilBar></ProfilBar>
         </div>
-        <div className = "col col-11 col-lg-11 col-md-11 col-sm-11">
-           <Dashboard ></Dashboard>
-       </div>
-
+          <div className = "col col-11 col-lg-11 col-md-11 col-sm-11">
+        
+              <Route component={App}>
+                <Route path="/dashboard" component={Dashboard}/>
+                <Route path="/pageAPI" component={pageAPI}/>
+              </Route>
+         
+        </div>
       </div>
     );
   }
+
 }
 
 export default App;

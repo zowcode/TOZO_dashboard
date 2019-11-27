@@ -15,19 +15,30 @@
   padding: 0;
 }
 
+.pageAPI{
+  
+  margin: 1rem;
+  padding: 0;
+  height: 15rem;
+  background-color: white;
+  border-radius : 2%;
+  border : #05f26c solid 0.1em;
+  font-family: Archive;
+  text-align: center;
+  box-shadow: lightgray 0.1rem 0.1rem 30px ;
+}
+
 .principal
 {
   background-color: white;
-
-  
 }
 
 
 .widgetContainer{
   margin: 2rem;
   padding: 0;
-
 }
+
 .widget{
   margin: 1rem;
   padding: 0;
