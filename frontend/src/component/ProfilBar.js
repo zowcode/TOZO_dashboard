@@ -23,7 +23,7 @@ function ProfilBar(props) {
         </div>   
 
         <div className="row row2">
-          <Link to={`/dashboard`}>
+          <Link to={`/`}>
             <Button className="bouttonDashboard" variant="primary" >
              <img src={ require('../Images/dashboard.svg')} width="40%"></img>
             </Button>
