@@ -9,7 +9,11 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "^4.16.4",
+<<<<<<< HEAD
     "express-generator": "^4.16.1",
+=======
+    "mongoose": "^5.7.13",
+>>>>>>> a16eace213eb65f05b10022177a8fe5c567ba86f
     "morgan": "~1.9.1"
   }
 }
