@@ -1,3 +1,6 @@
+Zoé COMPOINT
+Thomas JUBIN
+
 # Projet de fin de semestre
 
 # LIBRAIRIES
