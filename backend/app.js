@@ -6,6 +6,11 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+const hostname = 'localhost';
+const port = '3000';
+app.listen(port, hostname, ()=>{
+  console.log('mon serveur marche');
+});
 
 var app = express();
 
