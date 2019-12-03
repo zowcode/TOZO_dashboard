@@ -18,17 +18,23 @@
     border:  0.1px solid rgb(49,49,49);
     border-radius: 3rem;
     margin-bottom: 1rem;
+
 }
 
 .todoListMain .header input::placeholder
 {
     color: #05f26c;
-
+    
 }
 
 .header
 {
     margin-top: 0.5rem;
+}
+
+.todoListMain
+{
+    height: auto;
 }
 
 .theList 
@@ -41,11 +47,24 @@
 
 .theList li
 {
-    color: #05f26c;
+    color: rgb(49, 49, 49);
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5rem;
     border: #05f26c solid 0.1px;
     width: auto;
     padding : 0.5rem;
+    font-family: Hero;
+    transition : background-color 0.2s ease-out;
 }
 
+.theList li:hover
+{
+    border: #f86c6c solid 0.1px;   
+    cursor: pointer;
+}
+
+@font-face
+{
+    font-family: Hero;
+    src: url(../Font/HERO-REGULAR.TTF);
+}
