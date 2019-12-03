@@ -14,6 +14,18 @@ app.listen(port, hostname, ()=>{
 
 var app = express();
 
+//ajout de la base de donnée
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+const dbName = "DashboardProject";
+cons dbURL = 'mongodb://localhost:27017/${dbName}';
+
+//connection à la database
+mongoose.connect(dbURL, {
+    userNewUrlParser: true
+});
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
