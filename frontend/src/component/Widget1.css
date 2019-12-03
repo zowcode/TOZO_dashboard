@@ -32,6 +32,11 @@
     margin-top: 0.5rem;
 }
 
+.todoListMain
+{
+    height: auto;
+}
+
 .theList 
 {
     list-style: none;

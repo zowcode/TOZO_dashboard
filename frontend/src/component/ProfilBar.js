@@ -18,11 +18,11 @@ function ProfilBar() {
         </div>
       
       <div className="row row2">
-        <Button className="bouttonDashboard" variant="primary" > <img src={ require('../Images/dashboard.svg')} width="60%"></img></Button>
+        <Button className="bouttonDashboard" variant="primary" > <img src={ require('../Images/dashboard.svg')} width="40%"></img></Button>
      </div>
 
      <div className="row row3">
-        <Button className="bouttonPlus" variant="primary"><img src={ require('../Images/plus.svg')} width="60%"></img></Button>
+        <Button className="bouttonPlus" variant="primary"><img src={ require('../Images/plus.svg')} width="40%"></img></Button>
      </div>
 
 

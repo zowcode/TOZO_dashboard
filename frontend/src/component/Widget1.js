@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Widget1Items from "./Widget1Items.js";
 import './Widget1.css';
+import Scrollbar from 'react-scrollbars-custom';
 
 class Widget1 extends Component {
   constructor(props) {
@@ -55,11 +56,13 @@ class Widget1 extends Component {
         <div className="header">
           <form onSubmit={this.addItem}>
             
+            
             <input
             ref={(a) => this._inputElement = a} 
              placeholder="A faire">
             </input>
             <button type="submit">add</button>
+            
           </form>
         </div>
         <Widget1Items entries={this.state.items}
