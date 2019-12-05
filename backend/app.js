@@ -9,7 +9,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-/*
 //ajout de la base de donnée
 const mongoose = require('mongoose');
 
@@ -19,10 +18,9 @@ const dbURL = 'mongodb://localhost:27017/${dbName}';
 
 //connection à la database
 mongoose.connect(dbURL, {
-    userNewUrlParser: true
+  
 });
 
-*/ 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App.css';
 import './ProfilBar.css';
-import Page2 from './Page2';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import photoProfil from '../Images/pp.jpg';
