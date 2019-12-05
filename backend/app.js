@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 const dbName = "DashboardProject";
-const dbURL = 'mongodb://localhost:27017/${dbName}';
+const dbURL = `mongodb://localhost:27017/${dbName}`;
 
 //connection à la database
 mongoose.connect(dbURL, {
