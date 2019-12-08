@@ -13,7 +13,7 @@ app.listen(port, hostname, () => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'API Tozo' });
 });
 
 module.exports = router;

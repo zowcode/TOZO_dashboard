@@ -1,4 +1,6 @@
+'use strict';
 const User = require('../models/user.model.js');
+
 
 // Create and Save a new User
 exports.create = (req, res) => {
@@ -15,8 +17,7 @@ exports.create = (req, res) => {
     const user = new User({
       location: req.body.location,
       personsInHouse: req.body.personsInHouse,
-      houseSize: req.body.houseSize,
-      _id: req.body.houseSize || ''
+      houseSize: req.body.houseSize || ''
     });
   
     // Save User in the database + promise
@@ -34,18 +35,19 @@ exports.create = (req, res) => {
         });
     });
 };     
-    // Retrieve and return all Users from the database.
-        exports.findAll = (req, res) => {
-            User.find()
-            .then(users => {
-                res.send(users);
-            })
-            .catch(err => {
-                res.status(500).send({
-                message: err.message || 'Some error occurred while retrieving users.'
-                });
-            });
-        };
+
+// Retrieve and return all Users from the database.
+exports.findAll = (req, res) => {
+  User.find()
+    .then(users => {
+      res.status(200).json({users});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving users."
+      });
+    });
+};
         
   // Find a single User with a UserId
     exports.findOne = (req, res) => {

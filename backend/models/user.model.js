@@ -1,19 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
     location: String,
-
-    personsInHouse:String,
-  
-    houseSize: String,
-
-    _id :{
-        $oid: String,
-      required: true
-    }
-
-  }
+    personsInHouse: Number,
+    houseSize: String
+  },
+  { collection: "User" }
 );
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);

@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+// we import our user controller
+var User = require('../controllers/user.controller');
+
 // Lodash
 var _ = require('lodash');
 var _ = require('lodash/core');
@@ -10,20 +13,20 @@ var object = require('lodash/fp/object');
 var at = require('lodash/at');
 var curryN = require('lodash/fp/curryN');
 
-let users= [{
-  user: "Arthur",
-  id: "0"
-}];
-
-
-
 /* GET users listing. */
+router.get('/', (req, res) => {
+  // Get List of user and return JSON
+  User.findAll(req, res);
+  // res.status(200).json({ users });
+});
+
+/* GET users listing. 
 router.get('/', (req, res) => {
   // Get List of user and return JSON
   res.status(200).json({ users });
 });
 
-/* GET one user. */
+/* GET one user. 
 router.get('/:id', (req, res) => {
   const { id } = req.params;
   // Find user in DB
@@ -35,7 +38,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-/* PUT new user. */
+/* PUT new user. 
 router.put('/', (req, res) => {
   // Get the data from request from request
   const { user } = req.body;
@@ -50,7 +53,7 @@ router.put('/', (req, res) => {
   });
 });
 
-/* DELETE user. */
+/* DELETE user. 
 router.delete('/:id', (req, res) => {
   // Get the :id of the user we want to delete from the params of the request
   const { id } = req.params;
@@ -64,7 +67,7 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-/* UPDATE user. */
+/* UPDATE user.
 router.post('/:id', (req, res) => {
   // Get the :id of the user we want to update from the params of the request
   const { id } = req.params;
@@ -79,8 +82,8 @@ router.post('/:id', (req, res) => {
   res.json({
     message: `Just updated ${id} with ${user}`
   });
+
+ 
 });
-
-
-
+ */
 module.exports = router;

@@ -3,12 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
 //ajout de la base de donnée
 const mongoose = require('mongoose');
 
@@ -18,8 +16,9 @@ const dbURL = `mongodb://localhost:27017/${dbName}`;
 
 //connection à la database
 mongoose.connect(dbURL, {
-  useNewUrlParser:true
-});
+  useNewUrlParser:true,
+  useUnifiedTopology: true
+}); 
 
 
 // view engine setup
@@ -33,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+// app.use('/user', userRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
