@@ -21,6 +21,22 @@ mongoose.connect(dbURL, {
   useNewUrlParser:true
 });
 
+//GET
+app.get('/test', (req, res) => {
+  res.json({
+    req: req.method,
+    data: "This is a GET"
+  })
+});
+
+//PUT
+app.put('/test', (req, res) => {
+  res.json({
+    req: res.method,
+    data: "This is a PUT"
+  });
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
