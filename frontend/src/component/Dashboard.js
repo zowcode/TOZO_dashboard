@@ -76,7 +76,7 @@ class Dashboard extends Component {
         // Call API
         console.log("je suis dans API");
         axios
-        .get('http://localhost:3001/users')
+        .get('http://localhost:3001/users/location')
         /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
         {
             headers: {"Content-Type": "text/plain"}}

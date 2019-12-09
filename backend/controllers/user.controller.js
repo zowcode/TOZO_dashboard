@@ -29,6 +29,18 @@ exports.create = (req, res) => {
     });
 };
 
+exports.findPersons = (req, res) =>{
+  User.find({}, 'personsInHouse location')
+  .then(user=> {
+    res.status(200).json({user});
+  })
+  .catch(err=> {
+    res.status(500).send({
+      message: err.message || "Some error occurred while retrieving users."
+
+    });
+  });
+};
 exports.findLocation = (req, res) => {
   
   User.find({}, 'location')
