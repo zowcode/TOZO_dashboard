@@ -19,7 +19,7 @@ class Forecast extends Component {
     axios
       .get(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`)
       .then(({ data }) => {
-        console.log(data);
+      
         // Recupere uniquement la propriété data
         const { list } = data;
         // On prend les trois premières heures de chaque jour (donc de 0-3h))
@@ -27,6 +27,7 @@ class Forecast extends Component {
 
         this.setState({ forecast });
       })
+      
       .catch(console.error);
   };
 

@@ -20,37 +20,28 @@ router.get('/', (req, res) => {
   // res.status(200).json({ users });
 });
 
-/* GET users listing. 
-router.get('/', (req, res) => {
-  // Get List of user and return JSON
-  res.status(200).json({ users });
-});
-
-/* GET one user. 
+/* GET one user. */
 router.get('/:id', (req, res) => {
-  const { id } = req.params;
+  // const { id } = req.params;
   // Find user in DB
-  const user = _.find(users, ["id", id]);
+  User.findOne(req, res);
   // Return user
-  res.status(200).json({
-    message: 'User found!',
-    user 
-  });
+  // res.status(200).json({
+  //   message: 'User found!',
+  //   user 
+  // });
 });
 
-/* PUT new user. 
-router.put('/', (req, res) => {
-  // Get the data from request from request
-  const { user } = req.body;
-  // Create new unique id
-  const id = _.uniqueId();
-  // Insert it in array (normaly with connect the data with the database)
-  users.push({ user, id });
-  // Return message
-  res.json({
-    message: `Just added ${id}`,
-    user: { user, id }
-  });
+
+router.post('/new/:id', (req, res) => {
+  // const { id } = req.params;
+  // Find user in DB
+  User.create(req, res);
+  // Return user
+  // res.status(200).json({
+  //   message: 'User found!',
+  //   user 
+  // });
 });
 
 /* DELETE user. 
