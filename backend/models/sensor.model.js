@@ -1,22 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const sensorSchema = new mongoose.Schema(
+const sensorSchema =  mongoose.Schema(
   {
-    _id :{
-        $oid: String,
-      required: true
-    },
-
-    creationDate: Date,
-
-    location:String,
+    creationDate: String,
+    location: String,
+    userID: String
+  },
   
-    userID :{
-        $oid: String,
-      required: true
-    },
-
-  }
+  { collection: "Sensor" }
 );
 
-module.exports = mongoose.model('User', sensorSchema);
+module.exports = mongoose.model('Sensor', sensorSchema);

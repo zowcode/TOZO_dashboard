@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express');
 var router = express.Router();
 
@@ -18,6 +19,24 @@ router.get('/', (req, res) => {
   // Get List of user and return JSON
   User.findAll(req, res);
   // res.status(200).json({ users });
+}); 
+
+/* GET one user. with id */
+router.get('/id/:id', (req, res) => {
+  User.findOne(req, res);
+
+   });
+
+
+/* PUT new user. */
+router.put('/', (req, res) => {
+  User.create(req, res);
+});
+
+//GET location listings
+router.get('/location', (req, res) =>{
+  console.log("ocoucou")
+  User.findLocation(req, res);
 });
 
 /* GET users listing. 
