@@ -34,6 +34,8 @@ export default class Example extends PureComponent {
     return (
     <div className="widget">   
       <div className="widgetName"> {this.props.nom} </div>
+      <div type="text" value={this.props.data} onChange={this.handleChange}/>
+      
       <BarChart
         width={400}
         height={200}

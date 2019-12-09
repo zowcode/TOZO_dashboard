@@ -9,12 +9,12 @@ import Widget4 from './Widget4';
 import Widget5 from './Widget5';
 import Widget6 from './Widget6';
 
+/// Pour tapper dans API:
+import axios from "axios";
+
+
+
 class Dashboard extends Component {
-
-
-    
-
-
 
     // CONSTRUCTEUR
     constructor(props) {
@@ -22,7 +22,9 @@ class Dashboard extends Component {
         super(props);
         // STATE: données internes du composant
         this.state = {
-      
+
+            info: "nulle",
+            
             widget1 : 
             {
                nom: "Todolist",
@@ -33,6 +35,7 @@ class Dashboard extends Component {
             widget2 : 
             {
                 nom: "Température",
+                data: "aerin",
                 type: "2",
                 content: "blablablaabalabl"
             },
@@ -69,9 +72,56 @@ class Dashboard extends Component {
 
 
     // CALL API
+    callAPI = city => {
+        // Call API
+        console.log("je suis dans API");
+        axios
+        .get('http://localhost:3001/users')
+        /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
+        {
+            headers: {"Content-Type": "text/plain"}}
+        )*/
+       // .then(response => (this.info = response))
+         /*.then(({ data }) => {
+        console.log(data);
+        const {location} = data;
+        console.log({location});
+        this.setState({ location });
+        })*/
+        .then(({ data }) => {
+            console.log(data);
+            // Recupere uniquement la propriété data
+            const { list } = data;
+            // On prend les trois premières heures de chaque jour (donc de 0-3h))
+            const info = [list[0], list[1]];
+    
+            this.setState({ info });
+          })
+        
+        .catch(error => console.log(error))
+
+    };
+
+    // Lance un appel au lancement du component
+    componentDidMount() {
+        const { info } = this.props;
+        this.callAPI(info);
+    }
+
+    // A chaque update relance une api
+    componentDidUpdate(nextProps) {
+        // Ici on verifie que la mise à jour concerne bien le champs city
+        if (nextProps.info !== this.props.info) {
+        this.callAPI(nextProps.info);
+        }
+    }
+
     render() {
         return (
             <div className="dashboard">
+                    <div id="app">
+                        { this.state.info}
+                    </div>
                 <div className="row ">
                      <h1 className="pageName">DASHBOARD</h1> 
                 </div>
@@ -85,8 +135,9 @@ class Dashboard extends Component {
                         </Widget1>
                     </div>
                     <div className="col">
-                        <Widget2 nom={this.state.widget2.nom} >  
+                        <Widget2 nom={this.state.widget2.nom} data={this.state.widget2.data} >  
                         </Widget2>
+                      
                     </div>
                     <div className="col">
                         <Widget3  nom={this.state.widget3.nom}

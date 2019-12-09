@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Widget1Items from "./Widget1Items.js";
+//import Widget1Items from "./Widget1Items.js";
 import './Widget1.css';
 
-class Widget1 extends Component {
+class ListPays extends Component {
   constructor(props) {
     super(props);
 
@@ -10,65 +10,21 @@ class Widget1 extends Component {
       items: []
     };
 
-    this.addItem = this.addItem.bind(this);
-    this.deleteItem = this.deleteItem.bind(this);
-  }
-   
-  addItem(e) {
 
-    if (this._inputElement.value !== "") {
-      var newItem = {
-        text: this._inputElement.value,
-        key: Date.now()
-      };
-   
-      this.setState((prevState) => {
-        return { 
-          items: prevState.items.concat(newItem) 
-        };
-      });
-     
-      this._inputElement.value = "";
-    }
-     
-    console.log(this.state.items);
-       
-    e.preventDefault();
- 
   }
+   
 
-  deleteItem(key) {
-    var filteredItems = this.state.items.filter(function (item) {
-      return (item.key !== key);
-    });
-   
-    this.setState({
-      items: filteredItems
-    });
-  }
-   
   render() {
     return (
       
       <div className="widget todoListMain">
         TO DO LIST
         <div className="header">
-          <form onSubmit={this.addItem}>
-            
-            
-            <input
-            ref={(a) => this._inputElement = a} 
-             placeholder="A faire">
-            </input>
-            <button type="submit">add</button>
-            
-          </form>
+        Liste des pays
         </div>
-        <Widget1Items entries={this.state.items}
-                      delete={this.deleteItem}/>
       </div>
     );
   }
 }
  
-export default Widget1;
+export default ListPays;
