@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import Axios from 'axios';
 
 class pageAPI extends React.Component {
 
@@ -11,6 +12,10 @@ class pageAPI extends React.Component {
   mySubmitHandler = (event) => {
     event.preventDefault();
     alert("You are submitting " + this.state.username);
+
+    axios
+    .put('http://localhost:3001/users', {location: location, personsInHouse: personsInHouse, homeSize: homeSize});
+
   }
 
   render(){
