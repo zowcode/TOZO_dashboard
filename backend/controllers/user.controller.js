@@ -30,7 +30,7 @@ exports.create = (req, res) => {
 };
 
 exports.findPersons = (req, res) =>{
-  User.find({}, 'personsInHouse location')
+  User.find({}, {personsInHouse: 1, location: 1, _id: 0})
   //User.collection.distinct("personsInHouse")
   //User.collection.distinct("location")
   .then(user=> {
@@ -59,7 +59,7 @@ exports.findLocation = (req, res) => {
 
 // Retrieve and return all Users from the database.
 exports.findAll = (req, res) => {
-  User.find()
+  User.find({}, {_id: 1})
     .then(users => {
       res.status(200).json({users});
     })
