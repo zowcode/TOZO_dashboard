@@ -5,25 +5,25 @@ import {
 
 const data = [
   {
-    name: 'Matin', uv: 4000, pv: 2400, amt: 2400,
+    name: 'France', Température: 4000, Humidité: 2400, amt: 2400,
   },
 
   {
-    name: 'Soir', uv: 2000, pv: 9800, amt: 2290,
+    name: 'Espagne', Température: 2000, Humidité: 9800, amt: 2290,
   },
   {
-    name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+    name: 'Ouagadoudou', Température: 1890, Humidité: 4800, amt: 2181,
   },
  
   {
-    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+    name: 'China', Température: 3490, Humidité: 4300, amt: 2100,
   },
 
   {
-    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+    name: 'Ethiopia', Température: 3490, Humidité: 4300, amt: 2100,
   },
   {
-    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+    name: 'Germany', Température: 3490, Humidité: 4300, amt: 2100,
   },
 ];
 
@@ -49,8 +49,8 @@ export default class Example extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
+        <Bar dataKey="Température" fill="#8884d8" />
+        <Bar dataKey="Humidité" fill="#82ca9d" />
       </BarChart>
     </div>
     );

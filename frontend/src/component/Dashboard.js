@@ -86,9 +86,8 @@ class Dashboard extends Component {
         .then(response => {
     
             var locationsList = response.data.user;
-
               this.setState({
-                locations: locationsList
+                locations: response.data.user,
               });
             
         })
@@ -141,9 +140,7 @@ class Dashboard extends Component {
     };
 
     // Lance un appel au lancement du component
-    componentDidMount(nextProps) {
-        
-      //  const { locations } = this.props;
+    componentDidMount() {
         this.callAPI();
 
     }
@@ -166,7 +163,6 @@ class Dashboard extends Component {
         if (nextProps.locations !== this.props.locations) {
             this.callAPI(nextProps.locations);
         }
-
     }
 
 
