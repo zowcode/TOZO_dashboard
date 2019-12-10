@@ -36,22 +36,12 @@ class pageAPI extends Component {
     }) 
     .catch(error => console.log(error))
 
-    axios
-   .put('http://localhost:3001/users', {
-     location : this.state.location,
-     personsInHouse: this.state.personsInHouse,
-     homeSize: this.state.homeSize,
-    } )
-   .catch(error => console.log(error))
 
    axios
-   .get('http://localhost:3001/users/all', {
-     location : this.state.location,
-     personsInHouse: this.state.personsInHouse,
-     homeSize: this.state.homeSize,
-    } )
+   .get('http://localhost:3001/users/all' )
     .then(response => {
-      var nombre = response.length;
+      var nombre = response.data.users.length;
+      console.log(response.data.users.length);
       console.log("nb users");
       console.log(nombre);
       this.setState({
@@ -78,8 +68,15 @@ class pageAPI extends Component {
 
   mySubmitHandler = (event) => {
     event.preventDefault();
-    alert("You are submitting " + this.state.location);
-    this.callAPI();
+    alert("Vous avez bien ajouté les user localisé à " + this.state.location);
+    //this.callAPI();
+    axios
+    .put('http://localhost:3001/users', {
+      location : this.state.location,
+      personsInHouse: this.state.personsInHouse,
+      homeSize: this.state.homeSize,
+     } )
+    .catch(error => console.log(error))
   }
   myChangeHandler1 = (event) => {
     this.setState({location: event.target.value});
@@ -117,19 +114,19 @@ class pageAPI extends Component {
         
         </div>
       </div>
-     
-      <div className="row pageAPI">
-      <div id="" className="colonne offset-3 col-lg-6 col-md-3 col-sm-4 col-6">
-        <div className="AddData">
-      <h1> LISTE UTILISATEURS: </h1><br/>
-      <h5> nombre: {this.state.nbUser} </h5><br/>
-      <ul>
-        {this.state.userList.map(item => (
-            <div  className="header" key={item}>{item}</div>
-        ))}
-      </ul>
-      </div>
-      </div>
+
+        <div className="row pageAPI">
+        <div id="" className="colonne offset-3 col-lg-6 col-md-3 col-sm-4 col-6">
+          <div className="AddData">
+        <h1> LISTE UTILISATEURS: </h1><br/>
+        <h5> nombre: {this.state.nbUser} </h5><br/>
+        <ul>
+          {this.state.userList.map(item => (
+              <div  className="header" key={item}>{item}</div>
+          ))}
+        </ul>
+        </div>
+        </div>
       </div>
 
     </div>

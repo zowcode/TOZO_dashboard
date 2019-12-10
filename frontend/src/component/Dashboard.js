@@ -89,9 +89,8 @@ class Dashboard extends Component {
         .then(response => {
     
             var locationsList = response.data.user;
-
               this.setState({
-                locations: response.data.user
+                locations: response.data.user,
               });
             
         })
@@ -101,10 +100,9 @@ class Dashboard extends Component {
         axios
         .get('http://localhost:3001/users/')
         .then(response => {
-        
-            
-            var nb = response.data.length;
-           // console.log(nb);
+    
+            var nb = 9;
+
               this.setState({
                 sensorT: nb
               });
@@ -116,17 +114,18 @@ class Dashboard extends Component {
 
     // Lance un appel au lancement du component
     componentDidMount() {
-        
-      //  const { locations } = this.props;
         this.callAPI();
     }
 
     // A chaque update relance une api
     componentDidUpdate(nextProps) {
-        // Ici on verifie que la mise à jour concerne bien le champs city
+        // Ici on verifie que la mise à jour concerne bien le champs location
         if (nextProps.locations !== this.props.locations) {
         this.callAPI(nextProps.locations);
         }
+        if (nextProps.locations !== this.props.locations) {
+            this.callAPI(nextProps.sensorT);
+            }
     }
 
     render() {
