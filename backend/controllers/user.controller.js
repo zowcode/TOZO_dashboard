@@ -31,6 +31,8 @@ exports.create = (req, res) => {
 
 exports.findPersons = (req, res) =>{
   User.find({}, 'personsInHouse location')
+  //User.collection.distinct("personsInHouse")
+  //User.collection.distinct("location")
   .then(user=> {
     res.status(200).json({user});
   })

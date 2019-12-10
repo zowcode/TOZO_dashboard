@@ -1,23 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const measureSchema = new mongoose.Schema(
+const measureSchema = mongoose.Schema(
   {
-    _id: {
-      $oid: String,
-      required: true
-    },
-
     type: String,
-
-    creationDate: Date,
-
-    sensorID: {
-        $oid: String,
-        required: true
-    },
-
-   value: String
-  }
+    creationDate: String,
+    value: Number
+  },
+  { collection: "Measure" }
 );
 
-module.exports = mongoose.model('User', measureSchema);
+module.exports = mongoose.model('Measure', measureSchema);
