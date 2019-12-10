@@ -20,8 +20,13 @@ router.get('/humidity', (req, res)=> {
 });
 
 //GET polution measures
-router.get('/pollutionByCountry', (req, res) => {
-    Measure.findPollutionByCountry(req, res);
+router.get('/pollution', (req, res) => {
+    Measure.findPollution(req, res);
+});
+
+//GET temperature measures
+router.get('/temperature', (req, res) => {
+    Measure.findTemperature(req, res);
 });
 
 module.exports = router;

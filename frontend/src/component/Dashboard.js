@@ -26,7 +26,7 @@ class Dashboard extends Component {
             locations: ["paris", "moscou", "berlin"],
 
             // WIDGET 3 : CAMAMBERT Nb sensor / type de sensor
-                sensorT: 10,  // nb sensors température
+                sensorT: 2,  // nb sensors température
                 sensorH: 6,// nb sensors humidité
                 sensorP: 4, // nb sensors pollution
            
@@ -82,16 +82,13 @@ class Dashboard extends Component {
         //WIDGET 1
         axios
         .get('http://localhost:3001/users/location')
-        /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
-        {
-            headers: {"Content-Type": "text/plain"}}
-        )*/
+
         .then(response => {
     
             var locationsList = response.data.user;
 
               this.setState({
-                locations: response.data.user
+                locations: locationsList
               });
             
         })
@@ -99,14 +96,43 @@ class Dashboard extends Component {
 
         //WIDGET 3 sensor de temp
         axios
-        .get('http://localhost:3001/users/')
+        .get('http://localhost:3001/measure/temperature')
         .then(response => {
         
             
-            var nb = response.data.length;
-           // console.log(nb);
+            var nb = response.data.measure.length;
+            console.log( response);
+            console.log(nb);
               this.setState({
-                sensorT: nb
+                sensorT: response.data.measure.length
+              });
+        })
+        .catch(error => console.log(error))
+
+        axios
+        .get('http://localhost:3001/measure/pollution')
+        .then(response => {
+        
+            
+            var nb = response.data.measure.length;
+            console.log( response);
+            console.log(nb);
+              this.setState({
+                sensorP: response.data.measure.length
+              });
+        })
+        .catch(error => console.log(error))
+    
+        axios
+        .get('http://localhost:3001/measure/humidity')
+        .then(response => {
+        
+            
+            var nb = response.data.measure.length;
+            console.log( response);
+            console.log(nb);
+              this.setState({
+                sensorH: response.data.measure.length
               });
         })
         .catch(error => console.log(error))
@@ -115,19 +141,34 @@ class Dashboard extends Component {
     };
 
     // Lance un appel au lancement du component
-    componentDidMount() {
+    componentDidMount(nextProps) {
         
       //  const { locations } = this.props;
         this.callAPI();
+
     }
 
     // A chaque update relance une api
     componentDidUpdate(nextProps) {
         // Ici on verifie que la mise à jour concerne bien le champs city
-        if (nextProps.locations !== this.props.locations) {
-        this.callAPI(nextProps.locations);
+        if (nextProps.sensorT !== this.props.sensorT) {
+        this.callAPI(nextProps.sensorT);
         }
+
+        if (nextProps.sensorP !== this.props.sensorP) {
+            this.callAPI(nextProps.sensorP);
+        }
+        
+        if (nextProps.sensorH !== this.props.sensorH) {
+            this.callAPI(nextProps.sensorH);
+            }
+
+        if (nextProps.locations !== this.props.locations) {
+            this.callAPI(nextProps.locations);
+        }
+
     }
+
 
     render() {
        

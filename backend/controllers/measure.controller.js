@@ -16,19 +16,28 @@ exports.findHumidity = (req, res) => {
       });
 };
 
-exports.findPollutionByCountry = (req, res) => {
-   
+exports.findPollution = (req, res) => {
     Measure.find({type:"airPollution"})
-    
-    let idUser = Sensor.find({_id: idSensor[i].sensorID}, {userID: 1, _id: 0})
-    User.find({_id: idUser.userID}, {location: 1, _id: 0})
-    .then(user => {
-        res.status(200).json({user});
-    })
-    .catch(err => {
+    .then(measure=> {
+        res.status(200).json({measure});
+      })
+      .catch(err=> {
         res.status(500).send({
-            meassage: err.message || "error mec"
+          message: err.message || "Some error occurred while retrieving users."
+    
         });
-    });
+      });
+};
 
+exports.findTemperature = (req, res) => {
+    Measure.find({type:"temperature"})
+    .then(measure=> {
+        res.status(200).json({measure});
+      })
+      .catch(err=> {
+        res.status(500).send({
+          message: err.message || "Some error occurred while retrieving users."
+    
+        });
+      });
 };

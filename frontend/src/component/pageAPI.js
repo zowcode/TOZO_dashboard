@@ -48,7 +48,6 @@ class pageAPI extends Component {
 
   mySubmitHandler = (event) => {
     event.preventDefault();
-
     alert("You are submitting " + this.state.username);
   }
 
