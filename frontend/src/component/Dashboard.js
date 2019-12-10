@@ -9,9 +9,12 @@ import Widget4 from './Widget4';
 import Widget5 from './Widget5';
 import Widget6 from './Widget6';
 
+
 /// Pour tapper dans API:
 import axios from "axios";
 
+// Load the full build.
+var _ = require('lodash');
 
 
 class Dashboard extends Component {
@@ -23,8 +26,34 @@ class Dashboard extends Component {
         // STATE: données internes du composant
         this.state = {
 
-            info: "nulle",
-            
+            forecast: null,
+            data : [
+          
+                {
+                    name: 'Mai', Température: 18, 
+                  },
+                  {
+                    name: 'Juin', Température: 19, 
+                  },
+                  {
+                    name: 'Juil', Température: 21, 
+                  },
+                  {
+                    name: 'Aou', Température: 22, 
+                  },
+                  {
+                    name: 'Sep', Température: 25, 
+                  },
+                  {
+                    name: 'Oct', Température: 30, 
+                  },
+                  {
+                    name: 'Nov', Température: 29, 
+                  },
+                  {
+                    name: 'Dec', Température: 29, 
+                  }
+               ],
             widget1 : 
             {
                nom: "Todolist",
@@ -76,28 +105,59 @@ class Dashboard extends Component {
         // Call API
         console.log("je suis dans API");
         axios
-        .get('http://localhost:3001/users')
+        .get('http://localhost:3001/users/location')
         /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
         {
             headers: {"Content-Type": "text/plain"}}
         )*/
-       // .then(response => (this.info = response))
-         /*.then(({ data }) => {
-        console.log(data);
-        const {location} = data;
-        console.log({location});
-        this.setState({ location });
-        })*/
+        .then(function (response) {
+        
+            console.log("lodash teste");
+            console.log(response.data.user);
+            var locations = _.filter(response.data.user, 'location');
+            console.log(locations);
+            
+        
+        })
+   
+        
+    /*
         .then(({ data }) => {
-            console.log(data);
+            console.log(data.length);
+            console.log(data.user);
+            console.log(data.user.length);
+    
+
             // Recupere uniquement la propriété data
             const { list } = data;
+
+            console.log(list[0]);
             // On prend les trois premières heures de chaque jour (donc de 0-3h))
-            const info = [list[0], list[1]];
+            const forecast = [list[0], list[2], list[3], list[4], list[5]];
     
-            this.setState({ info });
-          })
+            this.setState({ forecast });
         
+        })
+    /*
+        .then(({ data }) => {
+            console.log(data);
+            console.log(JSON.parse({ data }));
+            
+          //  var obj = JSON.parse({ data });
+           // console.log(obj.location);
+            console.log()
+            // Recupere uniquement la propriété data
+            //const { list } = obj.location;
+
+           // console.log(list);
+            //console.log({ list });
+            // On prend les trois premières heures de chaque jour (donc de 0-3h))
+
+           // const info = [list[0], list[1]];
+            //this.setState({ info });
+            
+        })
+      */
         .catch(error => console.log(error))
 
     };
