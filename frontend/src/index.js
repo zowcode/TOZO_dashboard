@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter , Link} from 'react-router-dom';
+import { BrowserRouter , Link, Router} from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom';
 
 
 ReactDOM.render(
 
   <BrowserRouter>
-   <App> </App>
+   <App/>
   </BrowserRouter>,
 
   document.getElementById('root')

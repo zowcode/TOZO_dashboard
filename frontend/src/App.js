@@ -33,10 +33,11 @@ class App extends Component {
         </div>
           <div className = "col col-11 col-lg-11 col-md-11 col-sm-11">
         
-              <Switch>
+          <Route component={App}>
+                
                 <Route path="/" component={Dashboard}/>
                 <Route path="/pageAPI" component={pageAPI}/>
-              </Switch>
+              </Route>
         </div>
       </div>
     );
