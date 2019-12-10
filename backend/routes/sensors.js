@@ -24,6 +24,6 @@ router.get('/', (req, res) => {
     Sensor.findOne(req, res);
 });
 
-//DELETE one sensor
+
 
 module.exports = router;

@@ -7,8 +7,7 @@ import Widget2 from './Widget2';
 import Widget3 from './Widget3';
 import Widget4 from './Widget4';
 import Widget5 from './Widget5';
-import Widget6 from './Widget6';
-
+//import Widget6 from './Widget6';
 
 /// Pour tapper dans API:
 import axios from "axios";
@@ -16,44 +15,19 @@ import axios from "axios";
 // Load the full build.
 var _ = require('lodash');
 
-
 class Dashboard extends Component {
 
     // CONSTRUCTEUR
     constructor(props) {
 
         super(props);
+
         // STATE: données internes du composant
         this.state = {
 
-            forecast: null,
-            data : [
-          
-                {
-                    name: 'Mai', Température: 18, 
-                  },
-                  {
-                    name: 'Juin', Température: 19, 
-                  },
-                  {
-                    name: 'Juil', Température: 21, 
-                  },
-                  {
-                    name: 'Aou', Température: 22, 
-                  },
-                  {
-                    name: 'Sep', Température: 25, 
-                  },
-                  {
-                    name: 'Oct', Température: 30, 
-                  },
-                  {
-                    name: 'Nov', Température: 29, 
-                  },
-                  {
-                    name: 'Dec', Température: 29, 
-                  }
-               ],
+            locations: ["paris", "moscou", "berlin"],
+           
+
             widget1 : 
             {
                nom: "Todolist",
@@ -99,11 +73,10 @@ class Dashboard extends Component {
     
     }
 
-
     // CALL API
-    callAPI = city => {
+    callAPI = locations => {
         // Call API
-        console.log("je suis dans API");
+        console.log("Call API");
         axios
         .get('http://localhost:3001/users/location')
         /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
@@ -112,16 +85,23 @@ class Dashboard extends Component {
         )*/
         .then(function (response) {
         
-            console.log("lodash teste");
             console.log(response.data.user);
-            var locations = _.filter(response.data.user, 'location');
-            console.log(locations);
+            var locationsList = response.data.user;
+            console.log(locationsList);
+            /*
+            this.setState(prevState => ({
+                locations: [...prevState.locations, locationsList]
+              }))*/
+
+              this.setState({
+                locations: response.data.user
+              });
             
-        
         })
    
         
     /*
+   
         .then(({ data }) => {
             console.log(data.length);
             console.log(data.user);
@@ -164,23 +144,31 @@ class Dashboard extends Component {
 
     // Lance un appel au lancement du component
     componentDidMount() {
-        const { info } = this.props;
-        this.callAPI(info);
+        console.log("Calle API 1; locations:");
+        console.log(this.state.locations);
+      //  const { locations } = this.props;
+        this.callAPI();
     }
 
     // A chaque update relance une api
     componentDidUpdate(nextProps) {
         // Ici on verifie que la mise à jour concerne bien le champs city
-        if (nextProps.info !== this.props.info) {
-        this.callAPI(nextProps.info);
+        if (nextProps.locations !== this.props.locations) {
+        this.callAPI(nextProps.locations);
         }
     }
 
     render() {
+       
         return (
             <div className="dashboard">
                     <div id="app">
-                        { this.state.info}
+                    <li> {this.state.test}</li>
+                        <ul>
+                             {this.state.locations.map(item => (
+                             <li key={item}>{item}</li>
+                            ))}
+                        </ul>
                     </div>
                 <div className="row ">
                      <h1 className="pageName">DASHBOARD</h1> 

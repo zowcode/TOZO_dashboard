@@ -32,10 +32,16 @@ router.get('/id/:id', (req, res) => {
 router.put('/', (req, res) => {
   User.create(req, res);
 });
+//Get personsInHouse
+router.get('/personsInHouse', (req, res) => {
+  console.log("ocoucou")
+
+  User.findPersons(req, res);
+}); 
 
 //GET location listings
 router.get('/location', (req, res) =>{
-  console.log("ocoucou")
+  //console.log("ocoucou")
   User.findLocation(req, res);
 });
 
