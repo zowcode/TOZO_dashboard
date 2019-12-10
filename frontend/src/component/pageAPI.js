@@ -10,7 +10,13 @@ class pageAPI extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { userList: ["paris", "moscou", "berlin"] };
+    this.state = { 
+      userList: ["paris", "moscou", "berlin"] ,
+      homeSize: "",
+      location: "",
+      personsInHouse: "",
+      nbUser: 0
+    };
   }
    // CALL API GET 
  callAPI = data => {
@@ -19,16 +25,40 @@ class pageAPI extends Component {
     axios
     .get('http://localhost:3001/users')
     .then(response => {
-      var userList = response.data._id;
+      var userList = response.data.users;
       console.log("call API admin:");
-      console.log(response.data);
+      console.log(response.data.users);
       console.log(userList);
       this.setState({
-        userList: response.data._id
+        userList: response.data.users
       });
 
     }) 
     .catch(error => console.log(error))
+
+    axios
+   .put('http://localhost:3001/users', {
+     location : this.state.location,
+     personsInHouse: this.state.personsInHouse,
+     homeSize: this.state.homeSize,
+    } )
+   .catch(error => console.log(error))
+
+   axios
+   .get('http://localhost:3001/users/all', {
+     location : this.state.location,
+     personsInHouse: this.state.personsInHouse,
+     homeSize: this.state.homeSize,
+    } )
+    .then(response => {
+      var nombre = response.length;
+      console.log("nb users");
+      console.log(nombre);
+      this.setState({
+        nbUser: nombre
+      });
+    }) 
+   .catch(error => console.log(error))
       
   };
   // Lance un appel au lancement du component
@@ -48,11 +78,18 @@ class pageAPI extends Component {
 
   mySubmitHandler = (event) => {
     event.preventDefault();
-
-    alert("You are submitting " + this.state.username);
+    alert("You are submitting " + this.state.location);
+    this.callAPI();
   }
-
-
+  myChangeHandler1 = (event) => {
+    this.setState({location: event.target.value});
+  }
+  myChangeHandler2 = (event) => {
+    this.setState({personsInHouse: event.target.value});
+  }
+  myChangeHandler3 = (event) => {
+    this.setState({homeSize: event.target.value});
+  }
   render() {
 
   return (
@@ -60,33 +97,41 @@ class pageAPI extends Component {
       <div className="row pageAPI">
         <div id="" className="colonne offset-3 col-lg-6 col-md-3 col-sm-4 col-6">
         <div className="AddData">
-           ADMINISTRATION
+        <h1>ADMINISTRATION UTILISATEUR</h1>
 
           <div className="header">
+              
             <form onSubmit={this.mySubmitHandler}>
                 Location<br/>
-                <input type="text" name="location"></input><br/><br/>
+                <input type="text" name="location" onChange={this.myChangeHandler1} ></input><br/><br/>
                 Persons living in the house <br/>
-                <input type="text" name="personsInHouse"></input> <br/> <br/>
+                <input type="text" name="personsInHouse " onChange={this.myChangeHandler2}></input> <br/> <br/>
                 House size<br/>
-                <input type="text" name="homeSize"></input> <br/><br/>
+                <input type="text" name="homeSize" onChange={this.myChangeHandler3}></input> <br/><br/>
               
-                <button type="submit"> Ajouter </button>
+                <button type="submit"> Ajouter </button><br/><br/>
             </form>
           </div> 
-
-          LISTE UTILISATEURS: 
-
-          <ul>
-            {this.state.userList.map(item => (
-                <div  className="header" key={item}>{item}</div>
-            ))}
-          </ul>
-
+      
         </div>
         
         </div>
       </div>
+     
+      <div className="row pageAPI">
+      <div id="" className="colonne offset-3 col-lg-6 col-md-3 col-sm-4 col-6">
+        <div className="AddData">
+      <h1> LISTE UTILISATEURS: </h1><br/>
+      <h5> nombre: {this.state.nbUser} </h5><br/>
+      <ul>
+        {this.state.userList.map(item => (
+            <div  className="header" key={item}>{item}</div>
+        ))}
+      </ul>
+      </div>
+      </div>
+      </div>
+
     </div>
       
   );

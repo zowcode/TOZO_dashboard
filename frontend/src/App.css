@@ -19,7 +19,7 @@
   
   margin: 1rem;
   padding: 0;
-  height: 15rem;
+  height: auto;
   background-color: white;
   border-radius : 2%;
   border : #05f26c solid 0.1em;
