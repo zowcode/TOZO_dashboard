@@ -77,17 +77,7 @@ class Dashboard extends Component {
         console.log("je suis dans API");
         axios
         .get('http://localhost:3001/users/location')
-        /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
-        {
-            headers: {"Content-Type": "text/plain"}}
-        )*/
-       // .then(response => (this.info = response))
-         /*.then(({ data }) => {
-        console.log(data);
-        const {location} = data;
-        console.log({location});
-        this.setState({ location });
-        })*/
+   
         .then(({ data }) => {
             console.log(data);
             // Recupere uniquement la propriété data

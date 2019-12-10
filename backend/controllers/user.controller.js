@@ -43,7 +43,8 @@ exports.findPersons = (req, res) =>{
 };
 exports.findLocation = (req, res) => {
   
-  User.find({}, 'location')
+  //User.find({}, 'location')
+  User.collection.distinct("location")
   .then(user => {
     res.status(200).json({user});
   })
