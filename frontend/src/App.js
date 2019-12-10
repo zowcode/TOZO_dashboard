@@ -8,11 +8,6 @@ import pageAPI from './component/pageAPI.js';
 import ProfilBar from './component/ProfilBar.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, Switch} from 'react-router-dom';
-import { BrowserRouter , Link} from 'react-router-dom';
-
-
-
-
 
 
 class App extends Component {
@@ -33,11 +28,10 @@ class App extends Component {
         </div>
           <div className = "col col-11 col-lg-11 col-md-11 col-sm-11">
         
-          <Route component={App}>
-                
-                <Route path="/" component={Dashboard}/>
-                <Route path="/pageAPI" component={pageAPI}/>
-              </Route>
+          <Switch>
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/pageAPI" exact component={pageAPI} />
+          </Switch>
         </div>
       </div>
     );

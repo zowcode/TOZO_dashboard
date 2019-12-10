@@ -87,14 +87,8 @@ class Dashboard extends Component {
             headers: {"Content-Type": "text/plain"}}
         )*/
         .then(response => {
-        
-            console.log(response.data.user);
+    
             var locationsList = response.data.user;
-            console.log(locationsList);
-            /*
-            this.setState(prevState => ({
-                locations: [...prevState.locations, locationsList]
-              }))*/
 
               this.setState({
                 locations: response.data.user
@@ -106,11 +100,11 @@ class Dashboard extends Component {
         //WIDGET 3 sensor de temp
         axios
         .get('http://localhost:3001/users/')
-        .then(function (response) {
+        .then(response => {
         
-            console.log(response.data);
+            
             var nb = response.data.length;
-            console.log(nb);
+           // console.log(nb);
               this.setState({
                 sensorT: nb
               });
@@ -122,8 +116,7 @@ class Dashboard extends Component {
 
     // Lance un appel au lancement du component
     componentDidMount() {
-        console.log("Calle API 1; locations:");
-        console.log(this.state.locations);
+        
       //  const { locations } = this.props;
         this.callAPI();
     }
