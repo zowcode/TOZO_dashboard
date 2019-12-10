@@ -26,11 +26,11 @@ class pageAPI extends React.Component {
             Location<br/>
             <input type="text" name="location"></input><br/><br/>
             Persons living in the house <br/>
-            <input type="text" name="personsInHouse"></input> <br/> <br/>
+            <input type="number" name="personsInHouse"></input> <br/> <br/>
            House size<br/>
             <input type="text" name="homeSize"></input> <br/><br/>
           
-            <button type="submit">Ajouter de la data</button>
+            <button type="submit">Ajouter un user</button>
           </form>
          </div> 
          </div>
