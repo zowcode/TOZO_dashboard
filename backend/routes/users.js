@@ -21,6 +21,13 @@ router.get('/', (req, res) => {
   // res.status(200).json({ users });
 }); 
 
+/* GET users listing. */
+router.get('/all', (req, res) => {
+  // Get List of user and return JSON
+  User.findAllAll(req, res);
+  // res.status(200).json({ users });
+}); 
+
 /* GET one user. with id */
 router.get('/id/:id', (req, res) => {
   User.findOne(req, res);
