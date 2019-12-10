@@ -13,11 +13,13 @@ var at = require('lodash/at');
 var curryN = require('lodash/fp/curryN');
 
 /* GET sensors listing. */
-router.get('/', (req, res) => {
+router.get('/:location', (req, res) => {
     // Get List of sensor and return JSON
     Sensor.findAll(req, res);
     // res.status(200).json({ sensors });
   }); 
+
+
 
 // GET one sensor
 router.get('/', (req, res) => {

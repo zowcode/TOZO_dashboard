@@ -39,7 +39,7 @@ exports.create = (req, res) => {
 
   // Retrieve and return all Sensors from the database.
 exports.findAll = (req, res) => {
-    Sensor.find()
+    Sensor.find({location: req.params.location})
       .then(sensors => {
         res.status(200).json({sensors});
       })

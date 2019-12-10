@@ -58,6 +58,20 @@ exports.findLocation = (req, res) => {
 };
 
 // Retrieve and return all Users from the database.
+exports.findAllAll = (req, res) => {
+   User.find()
+  // User.collection.distinct("_id")
+     .then(users => {
+       res.status(200).json({users});
+     })
+     .catch(err => {
+       res.status(500).send({
+         message: err.message || "Some error occurred while retrieving users."
+       });
+     });
+ };
+
+// Retrieve and return all Users from the database.
 exports.findAll = (req, res) => {
  // User.find({}, {_id: 1})
   User.collection.distinct("_id")
