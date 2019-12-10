@@ -1,13 +1,11 @@
 import React from 'react';
 import { Component } from "react";
 import '../App.css';
-import Widget from './Widget.js';
 import Widget1 from './Widget1';
 import Widget2 from './Widget2';
 import Widget3 from './Widget3';
 import Widget4 from './Widget4';
 import Widget5 from './Widget5';
-//import Widget6 from './Widget6';
 
 /// Pour tapper dans API:
 import axios from "axios";
@@ -180,12 +178,7 @@ class Dashboard extends Component {
                         content={this.state.widget5.content} >  
                         </Widget5>
                     </div>
-                    <div className="col">
-                        <Widget nom={this.state.widget6.nom}
-                        type={this.state.widget6.type}
-                        content={this.state.widget6.content} >  
-                        </Widget>
-                    </div>
+                    
                 </div>
 
             </div>
