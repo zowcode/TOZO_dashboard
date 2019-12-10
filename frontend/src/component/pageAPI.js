@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from "react";
 import '../App.css';
+import Axios from 'axios';
 
 /// Pour tapper dans API:
 import axios from "axios";
@@ -60,6 +61,7 @@ class pageAPI extends Component {
         <div id="" className="colonne offset-3 col-lg-6 col-md-3 col-sm-4 col-6">
         <div className="AddData">
            ADMINISTRATION
+
           <div className="header">
             <form onSubmit={this.mySubmitHandler}>
                 Location<br/>

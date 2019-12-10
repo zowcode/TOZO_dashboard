@@ -59,7 +59,8 @@ exports.findLocation = (req, res) => {
 
 // Retrieve and return all Users from the database.
 exports.findAll = (req, res) => {
-  User.find({}, {_id: 1})
+ // User.find({}, {_id: 1})
+  User.collection.distinct("_id")
     .then(users => {
       res.status(200).json({users});
     })
