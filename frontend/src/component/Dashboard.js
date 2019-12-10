@@ -24,8 +24,13 @@ class Dashboard extends Component {
 
         // STATE: données internes du composant
         this.state = {
-
+            // WIDGET 1 : LISTE Liste des pays munis de sensors
             locations: ["paris", "moscou", "berlin"],
+
+            // WIDGET 3 : CAMAMBERT Nb sensor / type de sensor
+                sensorT: 10,  // nb sensors température
+                sensorH: 6,// nb sensors humidité
+                sensorP: 4, // nb sensors pollution
            
 
             widget1 : 
@@ -73,17 +78,17 @@ class Dashboard extends Component {
     
     }
 
-    // CALL API
-    callAPI = locations => {
-        // Call API
-        console.log("Call API");
+    // CALL API GET 
+    callAPI = data => {
+
+        //WIDGET 1
         axios
         .get('http://localhost:3001/users/location')
         /*.put('http://localhost:3001/users', {location : "bathroom", person...} 
         {
             headers: {"Content-Type": "text/plain"}}
         )*/
-        .then(function (response) {
+        .then(response => {
         
             console.log(response.data.user);
             var locationsList = response.data.user;
@@ -98,47 +103,22 @@ class Dashboard extends Component {
               });
             
         })
-   
-        
-    /*
-   
-        .then(({ data }) => {
-            console.log(data.length);
-            console.log(data.user);
-            console.log(data.user.length);
-    
-
-            // Recupere uniquement la propriété data
-            const { list } = data;
-
-            console.log(list[0]);
-            // On prend les trois premières heures de chaque jour (donc de 0-3h))
-            const forecast = [list[0], list[2], list[3], list[4], list[5]];
-    
-            this.setState({ forecast });
-        
-        })
-    /*
-        .then(({ data }) => {
-            console.log(data);
-            console.log(JSON.parse({ data }));
-            
-          //  var obj = JSON.parse({ data });
-           // console.log(obj.location);
-            console.log()
-            // Recupere uniquement la propriété data
-            //const { list } = obj.location;
-
-           // console.log(list);
-            //console.log({ list });
-            // On prend les trois premières heures de chaque jour (donc de 0-3h))
-
-           // const info = [list[0], list[1]];
-            //this.setState({ info });
-            
-        })
-      */
         .catch(error => console.log(error))
+
+        //WIDGET 3 sensor de temp
+        axios
+        .get('http://localhost:3001/users/')
+        .then(function (response) {
+        
+            console.log(response.data);
+            var nb = response.data.length;
+            console.log(nb);
+              this.setState({
+                sensorT: nb
+              });
+        })
+        .catch(error => console.log(error))
+        
 
     };
 
@@ -162,14 +142,6 @@ class Dashboard extends Component {
        
         return (
             <div className="dashboard">
-                    <div id="app">
-                    <li> {this.state.test}</li>
-                        <ul>
-                             {this.state.locations.map(item => (
-                             <li key={item}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
                 <div className="row ">
                      <h1 className="pageName">DASHBOARD</h1> 
                 </div>
@@ -179,7 +151,7 @@ class Dashboard extends Component {
                     <div className="col">
                         <Widget1 nom={this.state.widget1.nom}
                         type={this.state.widget1.type}
-                        content={this.state.widget1.content} > 
+                        content={this.state.widget1.content} locations={this.state.locations}  > 
                         </Widget1>
                     </div>
                     <div className="col">
@@ -190,7 +162,7 @@ class Dashboard extends Component {
                     <div className="col">
                         <Widget3  nom={this.state.widget3.nom}
                         type={this.state.widget3.type}
-                        content={this.state.widget3.content} >  
+                        sensorT={this.state.sensorT}  sensorP={this.state.sensorP}   sensorH={this.state.sensorH}  >  
                         </Widget3>
                     </div>
 
